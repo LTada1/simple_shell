@@ -13,5 +13,7 @@ char _stringcopy(char *str1, char *str2);
 int _putchar(char c);
 int _strlen(char *str);
 void prompt_shell(void);
+unsigned int check_delim(char, const char *);
+char *_strtok(char *, const char *);
 
 #endif /* _MAIN_H_ */
