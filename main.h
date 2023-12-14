@@ -11,6 +11,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
+char *_stringdup(char *str);
 void execute_cmd(char **argv);
 char *get_loc(char *command);
 char _strncopy(char *str1, char *str2);
