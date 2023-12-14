@@ -10,7 +10,7 @@ struct stat buffer;
 
 path = getenv("PATH");
 
-if (PATH)
+if (path)
 {
 path_copy = strdup(path);
 command_length = _strlen(command);
