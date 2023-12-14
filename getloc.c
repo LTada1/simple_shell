@@ -18,10 +18,10 @@ while(path_token != NULL)
 directory_length = strlen(path_token);
             
 file_path = malloc(command_length + directory_length + 2);         
-_strcopy(file_path, path_token);
-_strcat(file_path, "/");
-_strcat(file_path, command);
-_strcat(file_path, "\0");
+_strncopy(file_path, path_token);
+_strncat(file_path, "/");
+_strncat(file_path, command);
+_strncat(file_path, "\0");
 
 if (stat(file_path, &buffer) == 0)
 {
