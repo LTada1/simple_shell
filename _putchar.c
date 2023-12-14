@@ -6,14 +6,9 @@
  * @chr: Character to print
  *
  * Return: 1
- */
+*/
 
-int printchar(va_list chr)
+int _putchar(char c)
 {
-	char ch;
-
-	ch = va_arg(chr, int);
-	_putchar(ch);
-
-	return (1);
+return (write(1, &c, 1));
 }

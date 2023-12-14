@@ -11,13 +11,15 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
+void execute_cmd(char **argv);
+char *get_loc(char *command);
 char _strncopy(char *str1, char *str2);
-char *_strncat(char *dest, char *src, int n);
+char *_strncat(char *dest, char *src);
 int _putchar(char c);
 int _strlen(char *str);
 void prompt_shell(void);
 unsigned int check_delim(char, const char *);
-void tokenize_Str(char *lineptr_copy, char *delim, char **argv);
+void tokenize_str(char *lineptr_copy, const char *delim, char **argv);
 char *_strtok(char *, const char *);
 
 #endif /* _MAIN_H_ */
