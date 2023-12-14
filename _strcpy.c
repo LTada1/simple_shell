@@ -9,11 +9,11 @@
  * Return: Always 0.
  */
 
-char *_strncpy(char *dest, char *src, int n)
+char *_strncopy(char *dest, char *src)
 {
 	int len;
 
-	for (len = 0; len < n && src[len] != 0; len++)
+	for (len = 0; src[len] != 0; len++)
 	{
 		dest[len] = src[len];
 		/*dest[len] = '\0';*/

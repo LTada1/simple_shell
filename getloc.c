@@ -1,5 +1,6 @@
 #include "main.h"
 
+char _strncopy(char *str1, char *str2);
 char *get_loc(char *command)
 {
 char *slash = "/";
