@@ -8,18 +8,18 @@
  * return: 0 on succes and -1 on failure
  */
 
-char  tokenize_str(char *lineptr_copy, const char *delim, char **argv)
-{
+void tokenize_str(char *lineptr_copy, const char *delim, char **argv) {
 char *token;
 int i;
 
 token = strtok(lineptr_copy, delim);
 for (i = 0; token != NULL; i++)
 {
-argv[i] = malloc(sizeof(char) * (_strlen(token) + 1));
+argv[i] = malloc(sizeof(char) * (strlen(token) + 1));
 _strncopy(argv[i], token);
 token = strtok(NULL, delim);
-return (token);
+}
+argv[i] = NULL;
 }
 
 /**
@@ -47,30 +47,36 @@ while (1)
 {
 prompt_shell();
 nchars_read = getline(&lineptr, &n, stdin);
-if (nchars_read == -1)
-{
-return (-1);
+if (nchars_read == -1) {
+return -1;
 }
 lineptr_copy = malloc(sizeof(char) * nchars_read);
 if (lineptr_copy == NULL)
 {
 perror("tsh: memory allocation error");
-return (-1);
+return -1;
 }
 _strncopy(lineptr_copy, lineptr);
 token = strtok(lineptr, delim);
-while (token != NULL)
-{
+while (token != NULL) {
 num_tokens++;
 token = strtok(NULL, delim);
 }
 num_tokens++;
-argv = malloc(sizeof(char *) * num_tokens);
-token = tokenize_str(lineptr_copy, delim, argv);
-argv[i] = NULL;
-execute_cmd(argv);
-
+char **argv = malloc(sizeof(char *) * num_tokens);
+if (argv == NULL)
+{
+perror("Memory allocation error");
+return -1;
+}
+tokenize_str(lineptr_copy, delim, argv);
+argv[num_tokens - 1] = NULL;
+for (i = 0; i < num_tokens - 1; i++) {
+free(argv[i]);
+}
+free(argv);
 free(lineptr_copy);
 free(lineptr);
-return (0);
+return 0;
+}
 }
