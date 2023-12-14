@@ -63,7 +63,7 @@ num_tokens++;
 token = strtok(NULL, delim);
 }
 num_tokens++;
-char **argv = malloc(sizeof(char *) * num_tokens);
+argv = malloc(sizeof(char *) * num_tokens);
 if (argv == NULL)
 {
 perror("Memory allocation error");
