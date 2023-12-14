@@ -9,7 +9,7 @@
  * Return: Always 0.
  */
 
-char *_strncopy(char *dest, char *src)
+void  _strncopy(char *dest, char *src)
 {
 	int len;
 
@@ -18,9 +18,8 @@ char *_strncopy(char *dest, char *src)
 		dest[len] = src[len];
 		/*dest[len] = '\0';*/
 	}
-	for ( ; len < n; len++)
+	for ( ; !len; len++)
 	{
 		dest[len] = '\0';
-	}
-	return (dest);
+	};
 }

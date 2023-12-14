@@ -14,7 +14,7 @@
 char *_stringdup(char *str);
 void execute_cmd(char **argv);
 char *get_loc(char *command);
-char _strncopy(char *str1, char *str2);
+char  _strncopy(char *str1, char *str2);
 char *_strncat(char *dest, char *src);
 int _putchar(char c);
 int _strlen(char *str);
