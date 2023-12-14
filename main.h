@@ -10,6 +10,7 @@
 #include <string.h>
 
 char _stringcopy(char *str1, char *str2);
+char *_strncat(char *dest, char *src, int n);
 int _putchar(char c);
 int _strlen(char *str);
 void prompt_shell(void);
