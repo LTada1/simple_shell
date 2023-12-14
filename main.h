@@ -11,11 +11,11 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 
-void _strncopy(char *dest, const char *src, size_t n);
+void _strcopy(char *dest, const char *src);
 char *_stringdup(char *str);
 void execute_cmd(char **argv);
 char *get_loc(char *command);
-char  _strncopy(char *str1, char *str2);
+char  *_strncopy(char *str1, char *str2);
 char *_strncat(char *dest, char *src);
 int _putchar(char c);
 int _strlen(char *str);

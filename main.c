@@ -34,7 +34,7 @@ if (lineptr_copy == NULL)
 perror("tsh: memory allocation error");
 return -1;
 }
-_strcopy(lineptr_copy, lineptr);
+_strncopy(lineptr_copy, lineptr);
 token = strtok(lineptr, delim);
 while (token != NULL) {
 num_tokens++;

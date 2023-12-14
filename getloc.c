@@ -1,6 +1,5 @@
 #include "main.h"
 
-char _strncopy(char *str1, char *str2);
 char *get_loc(char *command)
 {
 char *slash = "/";
@@ -22,7 +21,7 @@ while(path_token != NULL)
 directory_length = strlen(path_token);
             
 file_path = malloc(command_length + directory_length + 2);         
-_strncopy(file_path, path_token);
+_strcopy(file_path, path_token);
 _strncat(file_path, slash);
 _strncat(file_path, command);
 _strncat(file_path, end);

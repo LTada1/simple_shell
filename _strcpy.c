@@ -9,7 +9,7 @@
  * Return: Always 0.
  */
 
-void  _strncopy(char *dest, char *src)
+char  *_strncopy(char *dest, char *src)
 {
 	int len;
 
@@ -22,4 +22,5 @@ void  _strncopy(char *dest, char *src)
 	{
 		dest[len] = '\0';
 	};
+return (dest);
 }
