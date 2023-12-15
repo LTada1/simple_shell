@@ -54,7 +54,7 @@ free(argv[i]);
 }
 free(argv);
 free(lineptr_copy);
-free(lineptr);
 }
+free(lineptr);
 return (0);
 }
