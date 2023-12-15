@@ -49,6 +49,7 @@ return -1;
 }
 tokenize_str(lineptr_copy, delim, argv);
 argv[num_tokens - 1] = NULL;
+execute_cmd(argv);
 for (i = 0; i < num_tokens - 1; i++) {
 free(argv[i]);
 }
