@@ -9,12 +9,12 @@
  * Return: Always 0.
  */
 
-char *_strncat(char *dest, const char *src, size_t n)
+char *_strncat(char *dest, const char *src)
 {
 size_t len1, len2;
 
 len2 = _strlen(dest);
-for (len1 = 0; len1 < n && src[len1] != '\0'; len1++)
+for (len1 = 0; src[len1] != '\0'; len1++)
 {
 dest[len2++] = src[len1];
 }
