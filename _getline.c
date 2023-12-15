@@ -23,13 +23,13 @@ char *_getline()
 	for (i = 0; c != EOF && c != '\n'; i++)
 	{
 		fflush(stdin);
-		rd = read(STDIN_FILEND, &c, 1);
+		rd = read(STDIN_FILENO, &c, 1);
 		if (rd == 0)
 		{
-			free(bffer);
+			free(buffer);
 			exit(EXIT_SUCCESS);
 		}
-		bufer[i] = c;
+		buffer[i] = c;
 		if (buffer[0] == '\n')
 			return (enter(buffer));
 		if (i >= buffsize)
