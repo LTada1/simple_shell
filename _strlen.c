@@ -8,12 +8,10 @@
  * Return: Length of str
  */
 
-int _strlen(char *str)
+size_t _strlen(const char *str)
 {
-	int len;
-
-	len = 0;
-	while (str[len] != '\0')
-		len++;
-	return (len);
+size_t len = 0;
+while (str[len] != '\0')
+len++;
+return len;
 }
